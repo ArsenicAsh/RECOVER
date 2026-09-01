@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: recover-postgres
+    environment:
+      POSTGRES_DB: recover
+      POSTGRES_USER: recover
+      POSTGRES_PASSWORD: recover
+    ports:
+      - "5432:5432"
+    volumes:
+      - recover_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  recover_postgres_data:
